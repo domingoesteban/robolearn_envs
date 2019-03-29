@@ -1,0 +1,54 @@
+<?xml version="1.0" ?>
+<robot name="big_table">
+  <material name="gray">
+    <color rgba="0.38 0.4 0.42 1"/>
+  </material>
+
+  <!--<static>true</static>-->
+  <link name="link1">
+    <collision name="surface">
+      <origin xyz="0 0 0.735"/>
+      <geometry>
+        <box size="0.4 0.8 0.03"/>
+      </geometry>
+    </collision>
+    <visual name="surface">
+      <origin xyz="0 0 0.735"/>
+      <geometry>
+        <box size="0.4 0.8 0.03"/>
+      </geometry>
+      <material name="gray"/>
+    </visual>
+    <collision name="leg">
+      <origin xyz="0 0 0.375"/>
+      <geometry>
+        <cylinder length="0.69" radius="0.02"/>
+      </geometry>
+    </collision>
+    <visual name="leg">
+      <origin xyz="0 0 0.375"/>
+      <geometry>
+        <cylinder length="0.69" radius="0.02"/>
+      </geometry>
+      <material name="gray"/>
+    </visual>
+    <collision name="base">
+      <origin xyz="0 0 0.015"/>
+      <geometry>
+        <box size="0.4 0.4 0.03"/>
+      </geometry>
+    </collision>
+    <visual name="base">
+      <origin xyz="0 0 0.015"/>
+      <geometry>
+        <box size="0.4 0.4 0.03"/>
+      </geometry>
+      <material name="gray"/>
+    </visual>
+    <inertial>
+        <mass value="5.0"/>
+        <origin xyz="0 0 0"/>
+        <inertia ixx="1.0" ixy="0" ixz="0" iyy="1.0" iyz="0" izz="1.0"/>
+    </inertial>
+  </link>
+</robot>

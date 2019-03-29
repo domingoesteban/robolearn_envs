@@ -1,0 +1,2 @@
+from .cogimon_locomotion_env import CogimonLocomotionEnv
+from .cogimon_reaching_env import CogimonReachingEnv

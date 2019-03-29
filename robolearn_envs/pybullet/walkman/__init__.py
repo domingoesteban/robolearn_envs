@@ -1,0 +1,2 @@
+from .walkman_locomotion_env import WalkmanLocomotionEnv
+from .walkman_reaching_env import WalkmanReachingEnv

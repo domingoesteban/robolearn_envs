@@ -1,6 +1,5 @@
 # Robolearn Environments
-
-"A Python package with OpenAI-Gym-like environments for Robot Learning"
+>A Python package with OpenAI-Gym-like environments for Robot Learning
 
 <table align="center">
     <tr>
@@ -22,7 +21,10 @@
     </tr>
 </table>
 
-**This package is still private** so for granting access to it please contact me.
+This repository contains a shorter version of the Pybullet-Environment interface
+of **Robolearn**.
+
+The code has been tested with Python 3.5 (or later).
 
 **Robolearn** is a python package that defines common interfaces
 between robot learning algorithms and robots. More info in the following
@@ -32,41 +34,50 @@ between robot learning algorithms and robots. More info in the following
 <img src="docs/img/robolearn_logo2.png" alt="robolearn_logo" width="100" height="100" class="center" />
 </p>
 
+**Warning**: This package is gradually becoming public, so the public version is still in development. Sorry for any inconvenience.
 
-# Environments
-| Robot | Task | Gym Name  |
-| ------------ |:------:|:-------:|
-|  |  |   |
-| Centauro | Reaching | CentauroReachingEnv-v0  |
-| Centauro | Locomotion | CentauroLocomotionEnv-v0  |
-|  |  |   |
-| Cogimon | Reaching | CogimonReachingEnv-v0  |
-| Cogimon | Locomotion | CogimonLocomotionEnv-v0  |
-|  |  |   |
-| Walkman | Reaching | WalkmanReachingEnv-v0  |
-| Walkman | Locomotion | WalkmanLocomotionEnv-v0  |
-|  |  |   |
-| Coman | Locomotion | ComanLocomotionEnv-v0  |
-|  |  |   |
-| Hyq | Locomotion | HyqLocomotionEnv-v0  |
-
-# Installation
-
+## Pre-Installation
+It is recommended to first create either a virtualenv or a conda environment.
+- **Option 1: Conda environment**. First install either miniconda (recommended) or anaconda. 
+[Installation instructions](https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html)
 ```bash
-git clone https://github.com/domingoesteban/robolearn_envs
+# Create the conda environment
+conda create -n <condaenv_name> python=3.5
+# Activate the conda environment
+conda activate <condaenv_name>
+
+```
+
+- **Option 2: Virtualenv**. First install pip and virtualenv. 
+[Installation instructions](https://packaging.python.org/guides/installing-using-pip-and-virtualenv/)
+```bash
+# Create the virtual environment
+virtualenv -p python3.5 <virtualenv_name>
+# Activate the virtual environment
+source <virtualenv_name>/bin/activate
+```
+
+## Installation
+1. Clone this repository
+```bash
+git clone https://github.com/domingoesteban/hiu_sac
+```
+
+2. Install the requirements of this repository
+```bash
 cd robolearn_envs
 pip install -e .
 ```
 
-# Example
+## Use
 Standard-OpenAI-Gym way:
 ```python
 import gym
 import robolearn_envs
 
+env = gym.make('RoboLearn-CogimonLocomotionRender-v0')
 # A 'headless' version of the same environment would be:
 # env = gym.make('RoboLearn-CogimonLocomotion-v0')
-env = gym.make('RoboLearn-CogimonLocomotionRender-v0')
 
 # By default, Robolearn Bullet environments starts rendering when they are reset.
 obs = env.reset()
@@ -100,7 +111,25 @@ for _ in range(100):
 env.close()
 ```
 
-# Citation
+## Environments
+| Robot | Task | Gym Name  |
+| ------------ |:------:|:-------:|
+|  |  |   |
+| Centauro | Reaching | CentauroReachingEnv-v0  |
+| Centauro | Locomotion | CentauroLocomotionEnv-v0  |
+|  |  |   |
+| Cogimon | Reaching | CogimonReachingEnv-v0  |
+| Cogimon | Locomotion | CogimonLocomotionEnv-v0  |
+|  |  |   |
+| Walkman | Reaching | WalkmanReachingEnv-v0  |
+| Walkman | Locomotion | WalkmanLocomotionEnv-v0  |
+|  |  |   |
+| Coman | Locomotion | ComanLocomotionEnv-v0  |
+|  |  |   |
+| Hyq | Locomotion | HyqLocomotionEnv-v0  |
+
+
+## Citation
 If this repository was useful for your research, we would appreciate that you can cite it:
 
     @misc{robolearn-envs,
@@ -112,7 +141,8 @@ If this repository was useful for your research, we would appreciate that you ca
       howpublished = {\url{https://github.com/domingoesteban/robolearn_envs}},
     }
 
-# Acknowledgements
+
+## Acknowledgements
 - *Erwin Coumans* for Bullet, PyBullet, and his didactic examples 
 ([Bullet repository](https://github.com/bulletphysics/bullet3))
 - *Enrico Mingo* for
@@ -123,3 +153,5 @@ urdf models.
 - *Malgorzata Kamedula* for
 [Centauro](https://github.com/ADVRHumanoids/centauro-simulator/tree/master/centauro_gazebo)
 urdf model.
+- *Dynamic Legged Systems Lab* for
+[HyQ](https://github.com/iit-DLSLab/hyq-description) urdf model.

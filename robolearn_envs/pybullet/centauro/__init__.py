@@ -1,0 +1,4 @@
+from .centauro_tray_env import CentauroTrayEnv
+from .centauro_obstacle_env import CentauroObstacleEnv
+from .centauro_locomotion_env import CentauroLocomotionEnv
+from .centauro_reaching_env import CentauroReachingEnv
