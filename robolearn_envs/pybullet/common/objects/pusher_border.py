@@ -13,12 +13,12 @@ class PusherBorder(BulletObject):
         if half_env:
             mjcf_xml = os.path.join(
                 os.path.dirname(os.path.abspath(__file__)),
-                'models/pusher_border/pusher_border_small.xml'
+                'models/pusher_border/pusher_border_small.mjcf'
             )
         else:
             mjcf_xml = os.path.join(
                 os.path.dirname(os.path.abspath(__file__)),
-                'models/pusher_border/pusher_border.xml'
+                'models/pusher_border/pusher_border.mjcf'
             )
 
         self.color = color

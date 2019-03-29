@@ -27,15 +27,15 @@ class BulletObject(BulletMultibody):
 
         model_type = osp.splitext(model_file)[1][1:]
         if model_type not in ['urdf', 'mjcf', 'sdf']:
-            raise NotImplemented("Wrong model_type."
-                                 "Only URDF and MJCF are supported")
+            raise NotImplementedError("Wrong model_type: %s in %s. "
+                                      "Only .urdf, .mjfc, .sdf are  supported"
+                                      % (model_type, model_file))
 
+        self._model_type = model_type
         self.model_xml = model_file
         self.base_name = base_name
         self.self_collision = self_collision
         self.use_file_intertia = use_file_inertia
-
-        self._model_type = model_type
 
 
         if init_pos is None:

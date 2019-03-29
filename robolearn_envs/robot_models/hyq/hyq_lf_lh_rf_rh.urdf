@@ -81,8 +81,7 @@
     <link name="trunk">
         <inertial>
             <origin xyz="0.01 0.0 0.00358"/>
-<!--            <mass value="58.96"/>-->
-            <mass value="10.00"/>
+            <mass value="58.96"/>
             <inertia ixx="1.5725937" ixy="0.028375" ixz="-0.203139" iyy="8.5015928" iyz="-0.004462" izz="9.1954911"/>
         </inertial>
         <visual>

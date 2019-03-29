@@ -56,8 +56,9 @@ class BulletRobot(RoboLearnRobot, BulletMultibody):
 
         model_type = osp.splitext(model_file)[1][1:]
         if model_type not in ['urdf', 'mjcf', 'sdf']:
-            raise NotImplemented("Wrong model_type %s . Only URDF, SDF and "
-                                 "MJCF are supported" % model_type)
+            raise NotImplementedError("Wrong model_type: %s in %s. "
+                                      "Only .urdf, .mjfc, .sdf are  supported"
+                                      % (model_type, model_file))
 
         self._model_type = model_type
         self.model_xml = model_file

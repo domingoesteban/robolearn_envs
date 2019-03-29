@@ -1,0 +1,7 @@
+*.egg-info
+*.idea
+*.pyc
+__pycache__
+.cache
+.gv
+*BK
