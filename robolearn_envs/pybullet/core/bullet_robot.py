@@ -458,8 +458,7 @@ class BulletRobot(RoboLearnRobot, BulletMultibody):
         return self._links
 
     def get_link_poses(self, body_names):
-        if not isinstance(body_names, list) and \
-                not isinstance(body_names, tuple):
+        if isinstance(body_names, str):
             body_names = [body_names]
         poses = []
         for body_name in body_names:
@@ -467,8 +466,7 @@ class BulletRobot(RoboLearnRobot, BulletMultibody):
         return poses
 
     def get_link_velocities(self, body_names):
-        if not isinstance(body_names, list) and \
-                not isinstance(body_names, tuple):
+        if isinstance(body_names, str):
             body_names = [body_names]
         speeds = []
         for body_name in body_names:
@@ -476,8 +474,7 @@ class BulletRobot(RoboLearnRobot, BulletMultibody):
         return speeds
 
     def get_link_contacts(self, body_names):
-        if not isinstance(body_names, list) and \
-                not isinstance(body_names, tuple):
+        if isinstance(body_names, str):
             body_names = [body_names]
 
         contacts = []

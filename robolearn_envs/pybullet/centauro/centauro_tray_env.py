@@ -306,9 +306,9 @@ class CentauroTrayEnv(BulletEnv):
 
         if self._is_env_instantiation_complete:
             if self.active_subtask == 1:
-                robot_uid = self._robot._robot_uid
+                robot_uid = self._robot.id
                 tray_index = self._robot._links['tray'].bodyPartIndex
-                object_uid = self._object._object_uid
+                object_uid = self._object.id
                 const_pos = [0.2, 0.0, 0.029+0.062]
                 self.pbc.createConstraint(parentBodyUniqueId=robot_uid,
                                           parentLinkIndex=tray_index,

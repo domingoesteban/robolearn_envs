@@ -26,7 +26,7 @@ class RobotLocomotionEnv(BulletEnv):
                  alive_bonus=1e-4,
                  ctrl_rew_weight=1e-4,
                  vel_deviation_rew_weight=5e-3,
-                 rot_deviation_rew_weight=5e-2,
+                 rot_deviation_rew_weight=1e-2,
                  height_deviation_rew_weight=1e-1,
                  joint_limits_rew_weight=1e-3,
                  impact_rew_weight=1e-3,
